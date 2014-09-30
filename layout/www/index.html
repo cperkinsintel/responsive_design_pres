@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/init-app.js"></script>
+    <script src="js/init-dev.js"></script>
+    <style>
+        body{ margin:0px; }
+        /* big yellow text in each box */
+        .box{ 
+            font-size: 150px;
+            line-height:300px; 
+            text-align:center;
+            font-family:sans-serif;
+            color:yellow;
+        }
+        /* boxes are blue with light blue border */
+        .box {
+            background-color:blue; 
+            border: 5px solid lightblue; 
+        }
+        /* box size and float */
+        .box { 
+            box-sizing: border-box; 
+            height:300px;
+            margin:0px; 
+            float:left;
+            
+            min-width:250px; 
+        }
+        @media (min-width : 1000px)
+        {
+            .box {
+               width:25%; 
+            }
+        }
+        @media (min-width : 750px) and (max-width : 1000px)
+        {
+            .box{
+                width:33.3%
+            }
+        }
+        @media (min-width : 500px) and (max-width : 750px)
+        {
+            .box{
+                width:50%
+            }
+        }
+        @media (max-width : 500px)
+        {
+            .box{
+                width:100%
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+
+</body>
+</html>

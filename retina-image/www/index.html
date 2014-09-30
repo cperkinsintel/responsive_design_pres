@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/init-app.js"></script>
+    <script src="js/init-dev.js"></script>
+    <style>
+        #pic {
+            position:fixed;
+            left:0px; right:0px;
+            top:0px; bottom:0px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #pic{
+            /* lo-res image is default */
+            background-image:url('css/little_baby.jpg');
+        }
+        
+        @media (min-device-pixel-ratio: 2),
+               (-webkit-min-device-pixel-ratio: 2)
+        {
+            #pic {
+                /* this hi-res image is loaded only on retina displays */
+                background-image:url('css/big_baby.jpg');
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="pic"></div>
+</body>
+</html>

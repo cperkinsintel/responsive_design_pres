@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="solution_0 text_sol_0">
+<head>
+    <script src="js/init-app.js"></script>
+    <script src="js/init-dev.js"></script>
+    <style>
+       body{ margin:0px; }
+     
+       button{ width:50%; 
+               height:50%; /* height:50% not working unless parent chain height set */
+               float:left; 
+               margin:0px; 
+       } 
+        
+       /* solution_1  force height on body and html */
+       html.solution_1, 
+       html.solution_1 body { height:100%; }
+        
+       /* solution_2  use vh units.  Requires Android 4.4 (or Crosswalk) */
+       html.solution_2 button { height: 50vh; }
+       
+       /* solutions 1 & 2 above help address the vertical height of the buttons 
+          but the button text is tiny */
+       
+       /* text_sol_1   rem / em   and a media query*/
+       html.text_sol_1 { font-size:24px; }
+       
+       @media (min-height:1000px){
+           
+           html.text_sol_1 { font-size: 36px; }
+       }
+        
+       html.text_sol_1 button { font-size:1.0rem; }   
+    </style>
+</head>
+<body>
+    <button>Click 1</button>
+    <button>Click 2</button>
+    <button>Click 3</button>
+    <button>Click 4</button>
+</body>
+</html>

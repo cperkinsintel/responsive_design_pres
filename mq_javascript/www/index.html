@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="lib/jquery.min.js"></script>
+    <script src="js/init-app.js"></script>
+    <script src="js/init-dev.js"></script>
+    <style>
+        body{ margin:0px;}
+        #box1, #box2
+        {
+            box-sizing: border-box;
+            background-color:blue;
+            width:100%;     /* 100vw */
+            height:200px;   /* 50vh     vh not working in iOS or Android < 4.4 (except Crosswalk) */
+        }
+        #box2 { background-color:red; }
+        
+        
+        @media (max-width: 400px) 
+        { 
+            #box1 { background-color: lightblue; }
+            #box2 { background-color: pink ; }
+        }
+    </style>
+    <script>
+        function output_msg(txt)
+        {
+            $("#message").append("<p>" + txt + "</p>");
+        }
+        function init()
+        {
+            var mq = window.matchMedia('(max-width: 400px)');
+            //mq => {media:'(max-width: 400px)', matches:boolean, addListener:function, removeListener:function}
+            if(mq.matches)
+            {
+                output_msg("START: window is less than 400 pixels wide");
+            }
+            else
+            {
+                output_msg("START: window is greater than 400 pixels wide");
+            }
+            mq.addListener(function(newmq)
+                           { 
+                               console.log(newmq); 
+                               if(newmq.matches)
+                               {
+                                   output_msg("change: window is now less than 400 pixels wide");
+                               }
+                               else
+                               {
+                                   output_msg("change: window is now greater than 400 pixels wide");
+                               }
+                           });
+                                           
+        }
+        $(document).ready(init);
+        
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="message"></div>
+</body>
+</html>

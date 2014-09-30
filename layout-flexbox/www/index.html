@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/init-app.js"></script>
+    <script src="js/init-dev.js"></script>
+    <style>
+        /* full bleed */
+        body{ margin:0px; }
+        /* big yellow text in each box */
+        .box{ 
+            font-size: 150px;
+            line-height:300px; 
+            text-align:center;
+            font-family:sans-serif;
+            color:yellow;
+        }
+        /* boxes are blue with light blue border */
+        .box {
+            background-color:blue; 
+            border: 5px solid lightblue; 
+        }
+        /* box is at least 250x300 pixels */
+        .box {
+            box-sizing: border-box;
+            margin: 0;
+            min-width:250px;  
+            min-height:300px;
+        }
+        
+        .container{
+            margin: 0;
+            padding: 0;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        
+        .box {
+            flex-grow:1;
+            flex-basis: calc(100% / 4);
+        }
+           
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+    </div>
+</body>
+</html>

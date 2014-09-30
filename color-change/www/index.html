@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/init-app.js"></script>
+    <script src="js/init-dev.js"></script>
+    <style>
+        body{ margin:0px;}
+        #box1, #box2
+        {
+            box-sizing: border-box;
+            background-color:blue;
+            width:100%;     /* 100vw */
+            height:200px;   /* 50vh     vh not working in iOS or Android < 4.4 (except Crosswalk) */
+        }
+        #box2 { background-color:red; }
+        
+        
+        @media (max-width: 400px) 
+        { 
+            #box1 { background-color: lightblue; }
+            #box2 { background-color: pink ; }
+        }
+        
+        @media (orientation: landscape)
+        {
+            #box1 { border:20px darkblue solid; }
+        }
+        
+        @media (min-width: 400px) and (orientation:landscape)
+        {
+            #box2{ border:20px darkred solid; }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>
